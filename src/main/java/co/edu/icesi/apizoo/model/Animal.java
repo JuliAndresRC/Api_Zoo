@@ -21,7 +21,7 @@ public class Animal {
     private String name;
     private String sex;
     private Double weight;
-    private String age;
+    private Integer age;
     private Double height;
     private LocalDateTime arrivalDate;
 
