@@ -1,8 +1,11 @@
 package co.edu.icesi.apizoo.service.impl;
 
+import co.edu.icesi.apizoo.dto.AnimalDTO;
 import co.edu.icesi.apizoo.model.Animal;
 import co.edu.icesi.apizoo.repository.AnimalRepository;
 import co.edu.icesi.apizoo.service.AnimalService;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,12 +13,14 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+@Service
+@AllArgsConstructor
 public class AnimalServiceImpl implements AnimalService {
 
-    private AnimalRepository animalRepository;
+    public final AnimalRepository animalRepository;
 
     @Override
-    public Animal getAnimal(UUID animalID) {
+    public Animal getAnimalById(UUID animalID) {
         return animalRepository.findById(animalID).orElse(null);
     }
 
@@ -30,18 +35,13 @@ public class AnimalServiceImpl implements AnimalService {
     }
 
     @Override
-    public Animal updateAnimal(Animal animal) {
-        Optional<Animal> aux = animalRepository.findById(animal.getId());
+    public Animal updateAnimal(Animal animalDTO) {
+        Optional<Animal> aux = animalRepository.findById(animalDTO.getId());
 
         if(aux.isPresent()) {
-            return animalRepository.save(animal);
+            return animalRepository.save(animalDTO);
         }else {
             return null;
         }
-    }
-
-    @Override
-    public void deleteAnimal(UUID animalID) {
-        animalRepository.deleteById(animalID);
     }
 }

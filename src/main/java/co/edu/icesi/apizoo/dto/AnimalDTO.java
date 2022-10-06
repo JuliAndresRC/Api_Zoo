@@ -12,11 +12,13 @@ import java.util.UUID;
 @NoArgsConstructor
 public class AnimalDTO {
 
-    private UUID ID;
-    private String name;
-    private String sex;
-    private Double weight;
-    private Integer age;
-    private Double height;
-    private LocalDateTime arrivalDate;
+    private UUID id;
+    private String Name;
+    private String Sex;
+    private Double Weight;
+    private Integer Age;
+    private Double Height;
+    private LocalDateTime ArrivalDate;
+    private UUID FatherID;
+    private UUID MotherID;
 }

@@ -10,7 +10,7 @@ import java.util.UUID;
 public interface AnimalAPI{
 
     @GetMapping("/{animalID}")
-    AnimalDTO getAnimal(@PathVariable UUID animalID);
+    AnimalDTO getAnimalById(@PathVariable UUID animalID);
 
     @GetMapping
     List<AnimalDTO> getAnimals();
@@ -18,9 +18,7 @@ public interface AnimalAPI{
     @PostMapping()
     AnimalDTO createAnimal(@RequestBody AnimalDTO animalDTO);
 
-    @PutMapping("/{animalID}")
-    AnimalDTO updateAnimal(@PathVariable UUID animalID);
-
-    @DeleteMapping("/{animalID}")
-    void deleteAnimal(@PathVariable UUID animalID);
+    @PutMapping()
+    AnimalDTO updateAnimal(AnimalDTO animalDTO);
 }
+
