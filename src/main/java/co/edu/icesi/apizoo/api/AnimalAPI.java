@@ -18,7 +18,7 @@ public interface AnimalAPI{
     @PostMapping()
     AnimalDTO createAnimal(@RequestBody AnimalDTO animalDTO);
 
-    @PutMapping()
-    AnimalDTO updateAnimal(AnimalDTO animalDTO);
+    @PatchMapping("/{animalID}")
+    AnimalDTO updateAnimal (@RequestBody AnimalDTO animalDTO, @PathVariable String animalID);
 }
 

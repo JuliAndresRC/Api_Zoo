@@ -18,5 +18,5 @@ public interface AnimalService {
 
     Animal createAnimal(@RequestBody Animal animalDTO);
 
-    Animal updateAnimal(@PathVariable Animal animalDTO);
+    Animal updateAnimal(@RequestBody Animal animalDTO);
 }

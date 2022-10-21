@@ -8,7 +8,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -36,12 +35,6 @@ public class AnimalServiceImpl implements AnimalService {
 
     @Override
     public Animal updateAnimal(Animal animalDTO) {
-        Optional<Animal> aux = animalRepository.findById(animalDTO.getId());
-
-        if(aux.isPresent()) {
-            return animalRepository.save(animalDTO);
-        }else {
-            return null;
-        }
+        return animalRepository.save(animalDTO);
     }
 }
