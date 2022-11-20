@@ -5,7 +5,13 @@
     font-family: "Comic Sans MS";
 }
 
-
+h1{
+    color: blue;
+}
+#title-create{
+    padding: 50px;
+    color: blue;
+}
 
 #title-principal{
     margin: auto;
@@ -14,8 +20,4 @@
     padding-bottom: 50px;
 }
 
-#title-create{
-    padding: 50px;
-    color: blue;
-}
 

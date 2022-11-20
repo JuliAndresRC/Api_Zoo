@@ -9,13 +9,13 @@
     <title>ANIMALES</title>
 </head>
 <body>
-<div th:switch="${animal}" class="container my-5">
+<div class="container my-5">
     <div class="row">
         <div class="col-md-6">
-            <div th:case="null" class="alert alert-warning" role="alert">
+            <div class="alert alert-warning" role="alert">
                 No hay animales registrados en el sistema!
             </div>
-            <div th:case="*">
+            <div>
                 <h2>
                     <i class="fa-solid fa-paw fa-beat"></i>
                     Zoologico
@@ -38,7 +38,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
+                <tr th:each="animal : ${animal}">
                     <td th:text="${animal.id}"></td>
                     <td th:text="${animal.name}"></td>
                     <td th:text="${animal.sex}"></td>
@@ -48,13 +48,13 @@
                     <td th:text="${animal.arrivalDate}"></td>
                     <td th:text="${animal.father}"></td>
                     <td th:text="${animal.mother}"></td>
-                    <td><a th:href="@{/#/{id}(id=${animal.id})}"
+                    <td><a th:href="@{/animals/edit/{id}(id=${animal.id})}"
                            class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a></td>
                 </tr>
                 </tbody>
             </table>
-            <button href="#" type="button" class="btn btn-secondary"> <i class="fa-solid fa-arrow-left"></i> Regresar</button>
-            <button href="#" type="button" class="btn btn-primary"> <i class="fa-solid fa-paw"></i> Añadir Animal <i class="fa-solid fa-paw"></i></button>
+            <a href="/animals/add" type="button" class="btn btn-primary"> <i class="fa-solid fa-paw"></i> Añadir Animal <i class="fa-solid fa-paw"></i></a>
+            <a href="/animals/edit" type="button" class="btn btn-primary"> <i class="fa-solid fa-paw"></i> Editar Animal <i class="fa-solid fa-paw"></i></a>
         </div>
     </div>
 </div>
