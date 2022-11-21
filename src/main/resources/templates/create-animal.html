@@ -22,12 +22,12 @@
         <div class="form-goup col-md-5">
             <div class="mb-3">
                 <label for="name" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="name" placeholder="Nombre del Nuevo Animal" style="font-family: 'Comic Sans MS'">
+                <input type="text" class="form-control" id="name" placeholder="Nombre del Nuevo Animal" name="name" style="font-family: 'Comic Sans MS'">
             </div>
         </div>
         <div class="form-goup col-md-5">
             <label for="sex" class="form-label">Género</label>
-            <select class="form-select" aria-label="Default select example" id="sex">
+            <select class="form-select" aria-label="Default select example" id="sex" name="sex">
                 <option selected>Seleccione el genero del animal</option>
                 <option value="1">Masculino</option>
                 <option value="2">Femenino</option>
@@ -36,25 +36,25 @@
         <div class="form-goup col-md-3">
             <div class="mb-3">
                 <label for="weight" class="form-label">Peso</label>
-                <input type="number" class="form-control" id="weight" placeholder="Peso en Kg" style="font-family: 'Comic Sans MS'">
+                <input type="number" class="form-control" id="weight" placeholder="Peso en Kg" name="weight" style="font-family: 'Comic Sans MS'">
             </div>
         </div>
         <div class="form-goup col-md-3">
             <div class="mb-3">
                 <label for="age" class="form-label">Edad</label>
-                <input type="number" class="form-control" id="age" placeholder="Edad" style="font-family: 'Comic Sans MS'">
+                <input type="number" class="form-control" id="age" placeholder="Edad" name="age" style="font-family: 'Comic Sans MS'">
             </div>
         </div>
         <div class="form-goup col-md-3">
             <div class="mb-3">
                 <label for="height" class="form-label">Estatura</label>
-                <input type="number" class="form-control" id="height" placeholder="Estatura en cm" style="font-family: 'Comic Sans MS'">
+                <input type="number" class="form-control" id="height" placeholder="Estatura en cm" name="height" style="font-family: 'Comic Sans MS'">
             </div>
         </div>
         <div class="form-goup col-md-4">
             <div class="mb-3">
                 <label for="arrivalDate" class="form-label">Fecha de Ingreso</label>
-                <input type="datetime-local" class="form-control" id="arrivalDate" placeholder="Fecha de Ingreso" style="font-family: 'Comic Sans MS'">
+                <input type="datetime-local" th:text="${#dates.format(date, 'yyyy-MM-dd : hh:mm:ss')}" class="form-control" id="arrivalDate" placeholder="Fecha de Ingreso" name="arrivalDate" style="font-family: 'Comic Sans MS'">
             </div>
         </div>
     </div>

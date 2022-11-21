@@ -9,13 +9,13 @@
     <title>ANIMALES</title>
 </head>
 <body>
-<div class="container my-5">
+<div th:switch="animals" class="container my-5">
     <div class="row">
         <div class="col-md-6">
-            <div class="alert alert-warning" role="alert">
+            <div th:if="${animals.isEmpty()}" class="alert alert-warning">
                 No hay animales registrados en el sistema!
             </div>
-            <div>
+            <div th:if="${!animals.isEmpty()}">
                 <h2>
                     <i class="fa-solid fa-paw fa-beat"></i>
                     Zoologico
@@ -38,7 +38,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="animal : ${animal}">
+                <tr th:each="animal : ${animals}">
                     <td th:text="${animal.id}"></td>
                     <td th:text="${animal.name}"></td>
                     <td th:text="${animal.sex}"></td>
